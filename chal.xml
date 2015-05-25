@@ -1,19 +1,19 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="87" x="42" y="68"></block>
-  <block type="robot_delay" id="89" inline="true" x="44" y="92">
+  <block type="movement_forward" id="1" x="42" y="68"></block>
+  <block type="robot_delay" id="2" inline="true" x="44" y="92">
     <value name="DELAY">
-      <block type="math_number" id="103">
+      <block type="math_number" id="3">
         <field name="NUM">4500</field>
       </block>
     </value>
     <next>
-      <block type="movement_left" id="123">
+      <block type="movement_left" id="4">
         <next>
-          <block type="movement_stop" id="113"></block>
+          <block type="movement_stop" id="5"></block>
         </next>
       </block>
     </next>
   </block>
-  <block type="movement_stop" id="136" x="3" y="213"></block>
-  <block type="movement_stop" id="137" x="3" y="213"></block>
+  <block type="movement_stop" id="6" x="3" y="213"></block>
+  <block type="movement_stop" id="7" x="3" y="213"></block>
 </xml>
