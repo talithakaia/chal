@@ -1,38 +1,79 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_repeat" id="1" inline="true" x="173" y="80">
-    <value name="TIMES">
-      <block type="math_number" id="2">
-        <field name="NUM">30</field>
+  <block type="variables_set" id="44" inline="true" x="110" y="40">
+    <field name="VAR">delay</field>
+    <value name="VALUE">
+      <block type="math_number" id="5">
+        <field name="NUM">4500</field>
       </block>
     </value>
-    <statement name="DO">
-      <block type="movement_forward" id="3">
-        <next>
-          <block type="robot_delay" id="4" inline="true">
-            <value name="DELAY">
-              <block type="math_number" id="5">
-                <field name="NUM">4500</field>
+    <next>
+      <block type="controls_whileUntil" id="42" inline="false">
+        <field name="MODE">WHILE</field>
+        <value name="NUMBER">
+          <block type="logic_compare" id="55" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="59">
+                <field name="VAR">delay</field>
               </block>
             </value>
+            <value name="B">
+              <block type="math_number" id="66">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="movement_forward" id="3">
             <next>
-              <block type="movement_left" id="6">
+              <block type="robot_delay" id="4" inline="true">
+                <value name="DELAY">
+                  <block type="variables_get" id="48">
+                    <field name="VAR">delay</field>
+                  </block>
+                </value>
                 <next>
-                  <block type="robot_delay" id="7" inline="true">
-                    <value name="DELAY">
-                      <block type="math_number" id="8">
-                        <field name="NUM">4500</field>
-                      </block>
-                    </value>
+                  <block type="movement_left" id="6">
                     <next>
-                      <block type="movement_stop" id="15"></block>
+                      <block type="robot_delay" id="7" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="8">
+                            <field name="NUM">1300</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="70" inline="true">
+                            <field name="VAR">delay</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="83" inline="true">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <block type="variables_get" id="94">
+                                    <field name="VAR">delay</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="90">
+                                    <field name="NUM">300</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
                     </next>
                   </block>
                 </next>
               </block>
             </next>
           </block>
+        </statement>
+        <next>
+          <block type="movement_stop" id="15"></block>
         </next>
       </block>
-    </statement>
+    </next>
   </block>
 </xml>
